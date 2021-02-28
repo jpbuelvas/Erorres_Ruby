@@ -1,1 +1,9 @@
-<h1> Tweets index </h1>
+<h1> Tweets</h1>
+
+
+
+<% @tweets.each  do |tweet|%>
+    
+    <p><%= tweet.id %> - <%= tweet.description %></p>
+<%end%>
+

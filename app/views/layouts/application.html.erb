@@ -11,6 +11,12 @@
   </head>
 
   <body>
-    <%= yield %>
+  <h1> Backend </h1>
+
+  <div> 
+    <%= link_to('Logout',destroy_user_session_path , method: :delete ) if user_signed_in?%>
+    <%= link_to('Login', new_user_session_path ) unless user_signed_in?%>
+  </div>
+  <%= yield %>
   </body>
 </html>
