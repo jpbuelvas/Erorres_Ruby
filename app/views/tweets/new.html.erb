@@ -1,0 +1,11 @@
+<h2>¿Qué Piensas? </H2>
+
+
+<%= form_with(model: Tweet, local: true) do |form|%>
+    
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+    <%= form.submit "Postear" %>
+<%end%>
+
+<%= link_to('Ver Tweets', tweets_path)%>

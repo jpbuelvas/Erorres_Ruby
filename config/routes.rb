@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root'home#index'
   get '/tweets', to: 'tweets#index'
   
+  resources :tweets 
+  
 
 
 end
