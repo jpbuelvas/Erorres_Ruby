@@ -1,7 +1,8 @@
 <h1> Tweets</h1>
 
 <% @tweets.each  do |tweet|%>
-    <p><%= tweet.id %> - <%= tweet.description %> - <%= link_to('Ver Detalles', tweet_path(tweet.id)) %></p>
+    <p><%= tweet.id %> - <%= tweet.description %> - <%= link_to('Ver Detalles', tweet_path(tweet.id)) %> - 
+    <%= link_to('Eliminar', tweet_path(tweet.id), method: 'delete') %></p>
 <%end%>
 
 <%= link_to('Nuevo Tweet', new_tweet_path)%>

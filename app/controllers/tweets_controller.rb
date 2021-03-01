@@ -12,14 +12,26 @@ class TweetsController < ApplicationController
         @tweet = Tweet.new
     end
 
+    def destroy 
+        @tweet = Tweet.find(params[:id])
+        if   @tweet.destroy
+            redirect_to tweets_path, notice: "Eliminado!"  
+        end
+    end
+
     def create
         @tweet =Tweet.new(tweet_params)
         if @tweet.save
-            redirect_to tweets_path, notice: "Enviado"
+            redirect_to tweets_path, notice: "Enviado!"
         else
+            flash.alert = "Verifica que hayas escrito algo o que tenga menos de 80 caracteres tu tweet."
             render :new
         end
     end
+
+      
+      
+
 
     private
 
