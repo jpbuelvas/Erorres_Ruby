@@ -4,7 +4,8 @@ class TweetsController < ApplicationController
         @tweets =Tweet.all
     end 
 
-    def Show
+    def show
+        @tweet = Tweet.find(params[:id])
     end
 
     def new
@@ -16,7 +17,7 @@ class TweetsController < ApplicationController
         if @tweet.save
             redirect_to tweets_path, notice: "Enviado"
         else
-            reder :new
+            render :new
         end
     end
 
