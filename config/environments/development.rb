@@ -15,7 +15,9 @@ Rails.application.configure do
   config.consider_all_requests_local = true
 
   #url
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_controller.default_url_options = {:host => "tutweet.herokuapp.com"}
+
+  config.action_mailer.default_url_options = { :host => 'tutweet.herokuapp.com' }
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
@@ -42,7 +44,6 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_caching = false
 
-config.action_mailer.default_url_options = { :host => 'tutweet.herokuapp.com' }
 
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.perform_deliveries = true
