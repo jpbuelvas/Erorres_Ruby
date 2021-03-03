@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
     before_action :authenticate_user!
     def index
-        @tweets =current_user.tweets
+        @tweets = Tweet.where(user_id: current_user.id)
     end 
 
     def show
@@ -21,7 +21,7 @@ class TweetsController < ApplicationController
 
     def create
         @tweet =Tweet.new(tweet_params)
-
+        @tweet.user_id = current_user.id
         if @tweet.save
             redirect_to tweets_path, notice: "Enviado!"
         else
