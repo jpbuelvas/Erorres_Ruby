@@ -96,15 +96,16 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  config.action_mailer.smtp_settings = {
-  :authentication => :plain,
-  :address => "smtp.gmail.com",
-  :port => '587',
-  :domain => "gmail.com",
-  :user_name => 'isaiasdiaz132@gmail.com',
-  :password => '123456isaias!'
-}
+  config.action_mailer.default_url_options = { host: 'tutweet.herokuapp.com'}
+  config.action_mailer.delivery_method=:smtp
+  config.action_mailer.smtp_settings={
+    address:          'smtp.gmail.com',
+    port:              587,
+    domain:            'gmail.com',
+    user_name:         ENV['MAIL'],
+    password:          ENV['PASS'] ,
+    enable_starttls_auto: true
+  }
 
 
   # Inserts middleware to perform automatic connection switching.
