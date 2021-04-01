@@ -13,4 +13,10 @@ Rails.application.routes.draw do
   get '/tweets', to: 'tweets#index'
   
   resources :tweets 
+  namespace :api do
+    namespace :v1 do
+      resources :tweets, only: [:index, :create, :show, :destroy]
+      resources :users, only: [:create, :index]
+    end
+  end
 end
