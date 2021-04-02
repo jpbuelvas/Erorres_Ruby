@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  Rails.application.routes.default_url_options[:host] = 'tweetsisaias.herokuapp.com'
+  Rails.application.routes.default_url_options[:host] = 'https://tutweetv2.herokuapp.com/'
   root'home#index'
   get '/tweets', to: 'tweets#index'
   

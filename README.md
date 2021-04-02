@@ -2,7 +2,7 @@
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
-# link app: https://tutweet.herokuapp.com/
+# link app:  https://tutweetv2.herokuapp.com/
 Things you may want to cover:
 
 * Ruby version
