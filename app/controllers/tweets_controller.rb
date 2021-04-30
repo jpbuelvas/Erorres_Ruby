@@ -25,7 +25,7 @@ class TweetsController < ApplicationController
         if @tweet.save
             redirect_to tweets_path, notice: "Enviado!"
         else
-            flash.alert = "Verifica que hayas escrito algo o que tenga menos de 80 caracteres tu tweet."
+            flash.alert = "Verifica que hayas escrito algo o que tenga menos de 280 caracteres tu tweet."
             render :new
         end
     end
